@@ -1,0 +1,24 @@
+ToDo:
+    1. Admin Dashboard
+    2. User Info Collection
+    3. Middleware to not let users to apply unless the user information is provided
+    4. 
+
+
+Profile:
+    1. name ---
+    2. email ---
+    3. gender ---
+    4. phone number ---
+    5. perma_address ---
+    6. dob ---
+    7. high_school_gpa ---
+    7. high_school_name ---
+    8. caste ---
+    9. parent_id ---
+    10. your_photo >>> ---
+    11. citizenship_front >>> ---
+    12. citizenship_back >>> ---
+    13. marksheet_photo >>> ---
+   
+
