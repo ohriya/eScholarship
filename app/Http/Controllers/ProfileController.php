@@ -185,6 +185,15 @@ class ProfileController extends Controller
         return redirect()->route('profile.show', Auth::user()->id)->withStatus('Your information updated!');
     }
 
+    public function apply()
+    {
+        $user = User::findOrFail(Auth::user()->id);
+        $user->has_applied = 1;
+        $user->save();
+
+        return redirect('/home')->withStatus('You have applied for the scholarship successfully.');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

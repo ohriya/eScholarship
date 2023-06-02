@@ -51,9 +51,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     @auth
-                    @if (Auth::user()->profile_id)
+                    @if (Auth::user()->has_applied == NULL)
                         <ul class="navbar-nav mr-auto font-weight-bold">
-                            <a href="#" class="nav-link">Apply for a Scholarship</a>
+                            <form action="/apply" method = "POST">
+                                @csrf
+                                <input type="submit" value="Apply for Scholarship">
+                            </form>
+                            <!-- <a href="" class="nav-link">Apply for a Scholarship</a> -->
                         </ul>                        
                     @endif
                     <!-- <ul class="navbar-nav mr-auto font-weight-bold">
