@@ -51,9 +51,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     @auth
-                    <ul class="navbar-nav mr-auto font-weight-bold">
-                        <a href="#" class="nav-link">Apply for a Scholarship</a>
-                    </ul>
+                    @if (Auth::user()->profile_id)
+                        <ul class="navbar-nav mr-auto font-weight-bold">
+                            <a href="#" class="nav-link">Apply for a Scholarship</a>
+                        </ul>                        
+                    @endif
                     <!-- <ul class="navbar-nav mr-auto font-weight-bold">
                         <a href="" class="nav-link">My Applications</a>
                     </ul> -->
@@ -81,7 +83,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="#" class="dropdown-item">My Profile</a>
+                                    <a href="{{route('profile.show', Auth::user()->id)}}" class="dropdown-item">My Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
