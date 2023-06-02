@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'fillProfileForm' => \App\Http\Middleware\FillProfileForm::class,
         'doNotCreateProfileAgain' => \App\Http\Middleware\DoNotCreateProfileAgain::class,
+        'profileEdit' => \App\Http\Middleware\ProfileEdit::class,
     ];
 }
