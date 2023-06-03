@@ -22,13 +22,19 @@
                         </div>
                     @endif
 
-                    <h2>Welcome, {{ Auth::user()->name }}!</h2> <hr>
+                    @if(Auth::user()->has_applied == NULL)
+                        <h2>Welcome, {{ Auth::user()->name }}!</h2> <hr>
                         Congratulations on taking this first step in the scholarship application process! <br>
                         Here are some tips to get you started: <br>
                         <ul>
                             <li>This tab is your Dashboard. After you apply for a scholarship, you will see your application progress here.</li>
                             <li>You can view and edit your information under My Info tab.</li>
                         </ul>
+                    @else
+                        <h2>Your scholarship application status: <button class="btm btn-warning" disabled>Pending</button></h2>
+                        <p>Your personal information is under review by the administrator. You will be notified AFTER the final deadline of scholarship application submission. Stay tuned!</p><br>
+                        <p><button class="btn btn-warning">You can still change your personal information until the last date of application submission.</button></p>
+                    @endif
                     
                 </div>
             </div>

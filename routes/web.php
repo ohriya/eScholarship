@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::view('/adminHome', 'adminHome')->name('adminHome')->middleware('auth','studentMiddleware');
 Route::resource('profile', ProfileController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -27,3 +29,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/apply', [App\Http\Controllers\ProfileController::class, 'apply']);
+
+Route::get('/users', [App\Http\Controllers\AdminController::class, 'showUsers']);
+Route::get('/user/{user_id}', [App\Http\Controllers\AdminController::class, 'showOneUser']);
+Route::get('/applied/users', [App\Http\Controllers\AdminController::class, 'showApplicants']);

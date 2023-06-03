@@ -16,6 +16,8 @@ class HomeController extends Controller
         $this->middleware('auth');
         $this->middleware('fillProfileForm')->except(['create', 'store']);
         $this->middleware('profileEdit')->only(['edit', 'update', 'show']);
+        $this->middleware('adminMiddleware');
+
     }
 
     /**

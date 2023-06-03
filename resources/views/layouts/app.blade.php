@@ -51,15 +51,27 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     @auth
-                    @if (Auth::user()->has_applied == NULL)
+
+                    @if(Auth::user()->is_admin == 1)
                         <ul class="navbar-nav mr-auto font-weight-bold">
-                            <form action="/apply" method = "POST">
+                            <form action="#" method = "POST">
                                 @csrf
-                                <input type="submit" value="Apply for Scholarship">
+                                <button class="btn btn-warning" type="submit"> Provide Scholarship </button>
                             </form>
                             <!-- <a href="" class="nav-link">Apply for a Scholarship</a> -->
-                        </ul>                        
+                        </ul>
+                    @else
+                        @if (Auth::user()->has_applied == NULL)
+                            <ul class="navbar-nav mr-auto font-weight-bold">
+                                <form action="/apply" method = "POST">
+                                    @csrf
+                                    <input type="submit" value="Apply for Scholarship">
+                                </form>
+                                <!-- <a href="" class="nav-link">Apply for a Scholarship</a> -->
+                            </ul>                        
+                        @endif
                     @endif
+                    
                     <!-- <ul class="navbar-nav mr-auto font-weight-bold">
                         <a href="" class="nav-link">My Applications</a>
                     </ul> -->
