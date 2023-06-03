@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<?php  
-    $arrayOfInterests = explode(',', $profile->interest);
-?>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">

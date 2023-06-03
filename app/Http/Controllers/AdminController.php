@@ -12,6 +12,9 @@ class AdminController extends Controller
     public function __construct(){
         $this->middleware('auth');
         $this->middleware('studentMiddleware');
+        $this->middleware('doNotCreateProfileAgain')->only('create');
+        $this->middleware('fillProfileForm')->except(['create', 'store']);
+        $this->middleware('profileEdit')->only(['edit', 'update', 'show']);
     }
 
     public function showUsers(){
@@ -29,6 +32,72 @@ class AdminController extends Controller
     public function showApplicants(){
         $profiles = Profile::all();
         return view('admin.showApplicants', compact('profiles'));
+    }
+
+
+    public function compareFloatDesc($a, $b) {
+        if ($a == $b) {
+            return 0;
+        }
+        return ($a < $b) ? 1 : -1;
+    }
+
+    public function filter(){
+        $lowerCasteApplicants[-1] = NULL;
+        $profiles = Profile::all();
+        foreach($profiles as $profile){
+            if($profile->user->has_applied == 1){
+                if (strpos($profile->parent_id, "GOV-") !== false){
+                    if(strcmp($profile->caste, "Dalit") == 0 || strcmp($profile->caste, "Janajati") == 0 || strcmp($profile->caste, "Aadibasi") == 0){
+                        array_push($lowerCasteApplicants, $profile->user_id);
+                    }
+                }
+            }
+        }
+        
+        foreach($profiles as $profile){
+            foreach($lowerCasteApplicants as $applicant){
+                if($profile->user_id == $applicant){
+                    $candidates[$profile->user_id] = $profile->high_school_gpa;                    
+                }
+            }
+        }
+        // var_dump($candidates);
+        $callback = function($a, $b) {
+            if ($a == $b) {
+                return 0;
+            }
+            return ($a < $b) ? 1 : -1;
+        };
+        uasort($candidates, $callback); 
+
+
+        // Function to slice an associative array
+        function slice_10_percent($array) {
+            $length = ceil(count($array) * 0.1);
+            $slicedArray = array_slice($array, 0, $length, true);
+            return $slicedArray;
+        }
+
+        // Slice the associative array
+        $winners = slice_10_percent($candidates);
+
+        // Output the sliced array
+        // var_dump($winners);
+
+        $users = User::all();
+        foreach($users as $user){
+            foreach($winners as $key => $value){
+                if($user->id == $key){
+                    $user->scholarship_status = 1;
+                    $user->save();
+                }else{
+                    $user->scholarship_status = 2; 
+                    $user->save();
+                }
+            }
+        }
+        return redirect()->route('adminHome')->withStatus('Scholarship has been awarded to the 10% of eligible students!');
     }
 
 }

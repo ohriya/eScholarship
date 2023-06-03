@@ -31,9 +31,22 @@
                             <li>You can view and edit your information under My Info tab.</li>
                         </ul>
                     @else
-                        <h2>Your scholarship application status: <button class="btm btn-warning" disabled>Pending</button></h2>
-                        <p>Your personal information is under review by the administrator. You will be notified AFTER the final deadline of scholarship application submission. Stay tuned!</p><br>
-                        <p><button class="btn btn-warning">You can still change your personal information until the last date of application submission.</button></p>
+                        <h2>Your scholarship application status: 
+                            @if(Auth::user()->has_applied == 1 && Auth::user()->scholarship_status == NULL)
+                                <button class="btn btn-warning">Pending</button>
+                                <p>Your personal information is under review by the administrator. You will be notified AFTER the final deadline of scholarship application submission. Stay tuned!</p><br>
+                                <p><button class="btn btn-warning">You can still change your personal information until the last date of application submission.</button></p>
+                            @endif
+                            @if(Auth::user()->has_applied == 1 && Auth::user()->scholarship_status == 2)
+                                <button class="btn btn-danger">Rejected</button><br><br>
+                                <p class = "text-danger">Sorry! </p> <p>Your aaplication for the scholarship has been rejected. There were more eligible students than you to provide scholarship. Thank you for participating. Better luck next time. </p>
+                            @endif
+                            @if(Auth::user()->has_applied == 1 && Auth::user()->scholarship_status == 1)
+                                <button class="btn btn-success">Awarded</button><br><br>
+                                <p class = "text-danger">Congratulations!!!</p> <p>Your application has been awarded with the Government scholarship. You can claim your scholarship by contacting the related authorities. Thank you!</p>
+                            @endif
+                        </h2>
+                        
                     @endif
                     
                 </div>

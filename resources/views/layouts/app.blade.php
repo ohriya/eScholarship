@@ -54,7 +54,7 @@
 
                     @if(Auth::user()->is_admin == 1)
                         <ul class="navbar-nav mr-auto font-weight-bold">
-                            <form action="#" method = "POST">
+                            <form action="/scholarship/filter" method = "POST">
                                 @csrf
                                 <button class="btn btn-warning" type="submit"> Provide Scholarship </button>
                             </form>
@@ -99,7 +99,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{route('profile.show', Auth::user()->id)}}" class="dropdown-item">My Profile</a>
+                                    @if(Auth::user()->is_admin == 0)
+                                        <a href="{{route('profile.show', Auth::user()->id)}}" class="dropdown-item">My Profile</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
