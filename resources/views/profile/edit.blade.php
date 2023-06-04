@@ -110,7 +110,7 @@
                             <label for="high_school_gpa" class="col-md-4 col-form-label text-md-right">{{ __('High School GPA') }}</label>
 
                             <div class="col-md-6">
-                                <input id="high_school_gpa" type="number" min="2" max="4" step="0.05" class="form-control @error('high_school_gpa') is-invalid @enderror" name="high_school_gpa" value="{{ $profile->high_school_gpa }}"  autocomplete="high_school_gpa" autofocus>
+                                <input id="high_school_gpa" type="number" min="2" max="4" step="0.01" class="form-control @error('high_school_gpa') is-invalid @enderror" name="high_school_gpa" value="{{ $profile->high_school_gpa }}"  autocomplete="high_school_gpa" autofocus>
 
                                 @error('high_school_gpa')
                                     <span class="invalid-feedback" role="alert">
@@ -142,8 +142,8 @@
                                 <div class="col-md-6">
 
                                     <div class="float-right">
-                                        <a target="_blank" href="/images/your_photos/{{$profile->your_photo}}">
-                                            <img src="/images/your_photos/{{$profile->your_photo}}" alt="{{$profile->your_photo}}"
+                                        <a target="_blank" href="/{{$profile->your_photo}}">
+                                            <img src="/{{$profile->your_photo}}" alt="{{$profile->your_photo}}"
                                             style="border: 1px solid #ddd;
                                                     border-radius: 4px;
                                                     padding: 5px;
@@ -174,8 +174,8 @@
                                 <div class="col-md-6">
 
                                     <div class="float-right">
-                                        <a target="_blank" href="/images/citizenship_fronts/{{$profile->citizenship_front}}">
-                                            <img src="/images/citizenship_fronts/{{$profile->citizenship_front}}" alt="{{$profile->citizenship_front}}"
+                                        <a target="_blank" href="/{{$profile->citizenship_front}}">
+                                            <img src="/{{$profile->citizenship_front}}" alt="{{$profile->citizenship_front}}"
                                             style="border: 1px solid #ddd;
                                                     border-radius: 4px;
                                                     padding: 5px;
@@ -206,8 +206,8 @@
 
                                 <div class="col-md-6">
                                     <div class="float-right">
-                                        <a target="_blank" href="/images/citizenship_backs/{{$profile->citizenship_back}}">
-                                            <img src="/images/citizenship_backs/{{$profile->citizenship_back}}" alt="{{$profile->citizenship_back}}"
+                                        <a target="_blank" href="/{{$profile->citizenship_back}}">
+                                            <img src="/{{$profile->citizenship_back}}" alt="{{$profile->citizenship_back}}"
                                             style="border: 1px solid #ddd;
                                                     border-radius: 4px;
                                                     padding: 5px;
@@ -236,8 +236,8 @@
 
                                 <div class="col-md-6">
                                     <div class="float-right">
-                                        <a target="_blank" href="/images/marksheet_photos/{{$profile->marksheet_photo}}">
-                                            <img src="/images/marksheet_photos/{{$profile->marksheet_photo}}" alt="{{$profile->marksheet_photo}}"
+                                        <a target="_blank" href="/{{$profile->marksheet_photo}}">
+                                            <img src="  /{{$profile->marksheet_photo}}" alt="{{$profile->marksheet_photo}}"
                                             style="border: 1px solid #ddd;
                                                     border-radius: 4px;
                                                     padding: 5px;

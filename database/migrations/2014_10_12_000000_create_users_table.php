@@ -22,7 +22,7 @@ return new class extends Migration
             $table->boolean('is_admin')->default(0);
             $table->integer('profile_id')->nullable();
             $table->integer('has_applied')->nullable();
-            $table->integer('scholarship_status')->nullable();
+            $table->integer('scholarship_status')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

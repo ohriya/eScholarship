@@ -110,7 +110,7 @@
                             <label for="high_school_gpa" class="col-md-4 col-form-label text-md-right">{{ __('High School GPA') }}</label>
 
                             <div class="col-md-6">
-                                <input id="high_school_gpa" type="number" min="2" max="4" step="0.05" class="form-control @error('high_school_gpa') is-invalid @enderror" name="high_school_gpa" value="{{ old('high_school_gpa') }}"  autocomplete="high_school_gpa" autofocus>
+                                <input id="high_school_gpa" type="number" min="2" max="4" step="0.01" class="form-control @error('high_school_gpa') is-invalid @enderror" name="high_school_gpa" value="{{ old('high_school_gpa') }}"  autocomplete="high_school_gpa" autofocus>
 
                                 @error('high_school_gpa')
                                     <span class="invalid-feedback" role="alert">

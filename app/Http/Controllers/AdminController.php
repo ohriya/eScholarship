@@ -47,7 +47,7 @@ class AdminController extends Controller
         $profiles = Profile::all();
         foreach($profiles as $profile){
             if($profile->user->has_applied == 1){
-                if (strpos($profile->parent_id, "GOV-") !== false){
+                if (strpos($profile->parent_id, "GOVT-Serv-") !== false){
                     if(strcmp($profile->caste, "Dalit") == 0 || strcmp($profile->caste, "Janajati") == 0 || strcmp($profile->caste, "Aadibasi") == 0){
                         array_push($lowerCasteApplicants, $profile->user_id);
                     }
@@ -63,6 +63,7 @@ class AdminController extends Controller
             }
         }
         // var_dump($candidates);
+
         $callback = function($a, $b) {
             if ($a == $b) {
                 return 0;
@@ -81,6 +82,7 @@ class AdminController extends Controller
 
         // Slice the associative array
         $winners = slice_10_percent($candidates);
+        // var_dump($winners); exit();
 
         // Output the sliced array
         // var_dump($winners);
@@ -88,16 +90,22 @@ class AdminController extends Controller
         $users = User::all();
         foreach($users as $user){
             foreach($winners as $key => $value){
-                if($user->id == $key){
-                    $user->scholarship_status = 1;
-                    $user->save();
-                }else{
-                    $user->scholarship_status = 2; 
+                if($user->id == (int)$key){
+                    $user->scholarship_status = 1; //1 == awarded
                     $user->save();
                 }
             }
+            continue;            
+            $user->scholarship_status = 2; //2 == rejected
+            $user->save();
         }
         return redirect()->route('adminHome')->withStatus('Scholarship has been awarded to the 10% of eligible students!');
+    }
+
+    public function showWinners()
+    {
+        $users = User::all();
+        return view('admin.showWinners', compact('users'));
     }
 
 }

@@ -31,7 +31,7 @@ class ImageEditRequest extends FormRequest
             'high_school_name' => 'required',
             'caste' => 'required',
             'parent_id' => 'required',
-            'phone_number' => 'required|digits:10|unique:profiles',
+            'phone_number' => 'required|digits:10',
         ];
     }
 

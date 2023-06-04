@@ -10,8 +10,8 @@
 
                 <div class="card-body">
                     <div class="float-right mr-5">
-                        <a target="_blank" href="/images/your_photos/{{$user->profile->your_photo}}">
-                            <img src="/images/your_photos/{{$user->profile->your_photo}}" alt="{{$user->profile->your_photo}}"
+                        <a target="_blank" href="/{{$user->profile->your_photo}}">
+                            <img src="/{{$user->profile->your_photo}}" alt="{{$user->profile->your_photo}}"
                             style="border: 1px solid #ddd;
                                     border-radius: 4px;
                                     padding: 5px;
@@ -69,8 +69,8 @@
                             
                             <tr>
                                 <td><strong>Citizenship Front</strong></td>
-                                <td><a target="_blank" href="/images/citizenship_fronts/{{$user->profile->citizenship_front}}">
-                                        <img src="/images/citizenship_fronts/{{$user->profile->citizenship_front}}" alt="{{$user->profile->citizenship_front}}"
+                                <td><a target="_blank" href="/{{$user->profile->citizenship_front}}">
+                                        <img src="/{{$user->profile->citizenship_front}}" alt="{{$user->profile->citizenship_front}}"
                                         style="border: 1px solid #ddd;
                                                 border-radius: 4px;
                                                 padding: 5px;
@@ -80,8 +80,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Citizenship Back</strong></td>
-                                <td><a target="_blank" href="/images/citizenship_back/{{$user->profile->citizenship_back}}">
-                                        <img src="/images/citizenship_backs/{{$user->profile->citizenship_back}}" alt="{{$user->profile->citizenship_back}}"
+                                <td><a target="_blank" href="/{{$user->profile->citizenship_back}}">
+                                        <img src="/{{$user->profile->citizenship_back}}" alt="{{$user->profile->citizenship_back}}"
                                         style="border: 1px solid #ddd;
                                                 border-radius: 4px;
                                                 padding: 5px;
@@ -91,8 +91,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Marksheet Copy</strong></td>
-                                <td><a target="_blank" href="/images/marksheet_photos/{{$user->profile->marksheet_photo}}">
-                                        <img src="/images/marksheet_photos/{{$user->profile->marksheet_photo}}" alt="{{$user->profile->marksheet_photo}}"
+                                <td><a target="_blank" href="/{{$user->profile->marksheet_photo}}">
+                                        <img src="/{{$user->profile->marksheet_photo}}" alt="{{$user->profile->marksheet_photo}}"
                                         style="border: 1px solid #ddd;
                                                 border-radius: 4px;
                                                 padding: 5px;

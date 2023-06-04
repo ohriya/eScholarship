@@ -19,8 +19,8 @@
                     @endif
                     
                 <div class="float-right">
-                    <a target="_blank" href="/images/your_photos/{{$profile->your_photo}}">
-                        <img src="/images/your_photos/{{$profile->your_photo}}" alt="{{$profile->your_photo}}"
+                    <a target="_blank" href="/{{$profile->your_photo}}">
+                        <img src="/{{$profile->your_photo}}" alt="{{$profile->your_photo}}"
                         style="border: 1px solid #ddd;
                                 border-radius: 4px;
                                 padding: 5px;
@@ -73,8 +73,8 @@
                             
                             <tr>
                                 <td><strong>Citizenship Front</strong></td>
-                                <td><a target="_blank" href="/images/citizenship_fronts/{{$profile->citizenship_front}}">
-                                        <img src="/images/citizenship_fronts/{{$profile->citizenship_front}}" alt="{{$profile->citizenship_front}}"
+                                <td><a target="_blank" href="/{{$profile->citizenship_front}}">
+                                        <img src="/{{$profile->citizenship_front}}" alt="{{$profile->citizenship_front}}"
                                         style="border: 1px solid #ddd;
                                                 border-radius: 4px;
                                                 padding: 5px;
@@ -84,8 +84,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Citizenship Back</strong></td>
-                                <td><a target="_blank" href="/images/citizenship_back/{{$profile->citizenship_back}}">
-                                        <img src="/images/citizenship_backs/{{$profile->citizenship_back}}" alt="{{$profile->citizenship_back}}"
+                                <td><a target="_blank" href="/{{$profile->citizenship_back}}">
+                                        <img src="/{{$profile->citizenship_back}}" alt="{{$profile->citizenship_back}}"
                                         style="border: 1px solid #ddd;
                                                 border-radius: 4px;
                                                 padding: 5px;
@@ -95,8 +95,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Marksheet Copy</strong></td>
-                                <td><a target="_blank" href="/images/marksheet_photos/{{$profile->marksheet_photo}}">
-                                        <img src="/images/marksheet_photos/{{$profile->marksheet_photo}}" alt="{{$profile->marksheet_photo}}"
+                                <td><a target="_blank" href="/{{$profile->marksheet_photo}}">
+                                        <img src="/{{$profile->marksheet_photo}}" alt="{{$profile->marksheet_photo}}"
                                         style="border: 1px solid #ddd;
                                                 border-radius: 4px;
                                                 padding: 5px;

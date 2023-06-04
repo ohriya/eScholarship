@@ -14,7 +14,8 @@
                         </div>
                     @endif
                     <a href="/users">View registered Users</a><br><br>
-                    <a href="/applied/users">View Applicants Info</a>
+                    <a href="/applied/users">View Applicants Info</a><br><br>
+                    <a href="/winners">View Scholarship Winners</a>
 
                 </div>
             </div>

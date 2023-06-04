@@ -34,3 +34,4 @@ Route::get('/users', [App\Http\Controllers\AdminController::class, 'showUsers'])
 Route::get('/user/{user_id}', [App\Http\Controllers\AdminController::class, 'showOneUser']);
 Route::get('/applied/users', [App\Http\Controllers\AdminController::class, 'showApplicants']);
 Route::post('/scholarship/filter', [App\Http\Controllers\AdminController::class, 'filter']);
+Route::get('/winners', [App\Http\Controllers\AdminController::class, 'showWinners']);

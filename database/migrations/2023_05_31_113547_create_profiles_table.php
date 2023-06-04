@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
             $table->string('gender');
             $table->string('phone_number')->unique();
             $table->string('perma_address');
