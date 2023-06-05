@@ -20,7 +20,7 @@ class ProfilesTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 200; $i++) {
+        for ($i = 0; $i < 500; $i++) {
             $your_photo = $faker->image('public/images/your_photos', 100, 100, null, false);
             $citizenship_back = $faker->image('public/images/citizenship_backs', 640, 480, null, false);
             $citizenship_front = $faker->image('public/images/citizenship_fronts', 640, 480, null, false);

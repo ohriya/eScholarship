@@ -87,17 +87,17 @@ class AdminController extends Controller
         // Output the sliced array
         // var_dump($winners);
 
+        $winner_ids = array_keys($winners);
+
         $users = User::all();
         foreach($users as $user){
-            foreach($winners as $key => $value){
-                if($user->id == (int)$key){
-                    $user->scholarship_status = 1; //1 == awarded
-                    $user->save();
-                }
+            if (in_array($user->id, $winner_ids)) {
+                $user->scholarship_status = 1;
+                $user->save();
+            }else{
+                $user->scholarship_status = 2;
+                $user->save();
             }
-            continue;            
-            $user->scholarship_status = 2; //2 == rejected
-            $user->save();
         }
         return redirect()->route('adminHome')->withStatus('Scholarship has been awarded to the 10% of eligible students!');
     }
