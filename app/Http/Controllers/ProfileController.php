@@ -66,22 +66,22 @@ class ProfileController extends Controller
 
         //your_photo upload
         $myArray =explode('@', Auth::user()->email);
-        $your_photo = 'your_photo_'.Auth::user()->id.'_'.time().'_'.$myArray[0].'.'.$request->your_photo->getClientOriginalExtension();
+        $your_photo = 'images/your_photos/'.uniqid().$request->your_photo->getClientOriginalExtension();
         $request->your_photo->move(public_path('/images/your_photos'), $your_photo);
         $profile->your_photo = $your_photo;
 
         //citizenship_front upload
-        $citizenship_front = 'citizenship_front_'.Auth::user()->id.'_'.time().'_'.$myArray[0].'.'.$request->citizenship_front->getClientOriginalExtension();
+        $citizenship_front = 'images/citizenship_fronts/'.uniqid().$request->citizenship_front->getClientOriginalExtension();
         $request->citizenship_front->move(public_path('/images/citizenship_fronts'), $citizenship_front);
         $profile->citizenship_front = $citizenship_front;
 
         //citizenship_back upload
-        $citizenship_back = 'citizenship_back_'.Auth::user()->id.'_'.time().'_'.$myArray[0].'.'.$request->citizenship_back->getClientOriginalExtension();
+        $citizenship_back = 'images/citizenship_backs/'.uniqid().$request->citizenship_back->getClientOriginalExtension();
         $request->citizenship_back->move(public_path('/images/citizenship_backs'), $citizenship_back);
         $profile->citizenship_back = $citizenship_back;
 
         //marksheet_photo upload
-        $marksheet_photo = 'marksheet_photo_'.Auth::user()->id.'_'.time().'_'.$myArray[0].'.'.$request->marksheet_photo->getClientOriginalExtension();
+        $marksheet_photo = 'images/marksheet_photos/'.uniqid().$request->marksheet_photo->getClientOriginalExtension();
         $request->marksheet_photo->move(public_path('/images/marksheet_photos'), $marksheet_photo);
         $profile->marksheet_photo = $marksheet_photo;
 

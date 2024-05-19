@@ -51,7 +51,7 @@ class ImageUploadRequest extends FormRequest
             'parent_id.required' => 'Please enter your parent ID.',
             'phone_number.required' => 'Please enter your phone number.',
             'phone_number.digits:10' => 'Please enter a 10 digit phone number.',
-            'caste.required' => 'Please enter your caste.',
+        
         ];
     }
 }

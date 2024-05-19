@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>eScholarship</title>
+        <title>शिक्षित नेपाल</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,25 +22,62 @@
                 line-height: 1.6;
                 color: #212529;
                 text-align: left;
-                background-color: #53799e;
+                background-color:#53799e;
+                
+               
             }
 
             .bg-customColor {
-                background-color: #082949;
+                background-color: #305980;
+                
             }
+            
+            
+          
+            .mt-8
+            {
+                height:200px;
+                
+            }
+            
+            .largesize
+            {
+                font-size:40px;
+                
+                padding-top: 45px;
+  padding-right: 80px;
+  padding-bottom: 30px;
+  padding-left: 100px;
+                
+            }
+            .smallsize
+            {
+                font-size:23px;
+            
+                padding-left:10px;
+                padding-right:50px;
+                
+            }
+            
+               
+               
+
+                
+                
+            
         </style>
     </head>
-    <body class="antialiased bg-customColor">
-        <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0">
+    <body class="antialiased bg-customColor ">
+        <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0 "  >
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ route('home') }}" class="text-sm text-white font-weight-bold">Home</a>
+                        <a href="{{ route('home') }}" class="text-sm text-white font-weight-bolder">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="ml-4 text-white font-weight-bold">Login</a>
+                        <a href="{{ route('login') }}" class="ml-4 text-white font-weight-bolder">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-white font-weight-bold">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-white font-weight-bolder">Register</a>
                         @endif
                     @endif
 
@@ -55,61 +92,30 @@
                 <!-- <a href="/"><img src="/images/svglogo.svg" alt="logo" class="image"></a> -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                         <!-- <img src="/images/svglogo.svg" alt="eScholarship App"> -->
-                        {{ config('app.name', 'Laravel') }}
+                       
                     </a>
                     
                 </div>
 
-                <div class="mt-8 bg-bodyColor dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2 ">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="ml-4 text-lg text-black leading-7 font-weight-bolder">Lorem ipsum dolor sit</div>
+                <div class="mt-8 bg-bodyColor dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg ">
+                    
+                        <div class="p-1 size" >
+                            <div class="flex items-center text-lg-center">
+                                <div class="ml-4 largesize text-xl text-white leading-7 font-weight-bolder text-lg-center">शिक्षित नेपाल</div>
                             </div>
 
                             <div class="ml-12">
-                                <div class="mt-2 text-black font-weight-bold text-sm">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur laborum rem velit, libero et iusto beatae, sunt tenetur exercitationem necessitatibus, eligendi modi quia? Veritatis quae nemo recusandae et excepturi maxime!
+                                <div class="mt-2 smallsize text-white text-xl font-weight-bold text-lg-center">
+                                छात्रवृत्ति:सरकारको शिक्षा प्राथमिकता!!!
                                 </div>
                             </div>
                         </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <div class="ml-4 text-lg text-black leading-7 font-weight-bolder">Lorem ipsum dolor sit</div>
-                            </div>
+                       
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-black font-weight-bold text-sm">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur laborum rem velit, libero et iusto beatae, sunt tenetur exercitationem necessitatibus, eligendi modi quia? Veritatis quae nemo recusandae et excepturi maxime!
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <div class="ml-4 text-lg text-black leading-7 font-weight-bolder">Lorem ipsum dolor sit</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-black font-weight-bold text-sm">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur laborum rem velit, libero et iusto beatae, sunt tenetur exercitationem necessitatibus, eligendi modi quia? Veritatis quae nemo recusandae et excepturi maxime!
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <div class="ml-4 text-lg text-black leading-7 font-weight-bolder">Lorem ipsum dolor sit</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-black font-weight-bold text-sm">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur laborum rem velit, libero et iusto beatae, sunt tenetur exercitationem necessitatibus, eligendi modi quia? Veritatis quae nemo recusandae et excepturi maxime!
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        
+                    
                 </div>
 
                 

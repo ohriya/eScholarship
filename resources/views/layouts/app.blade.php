@@ -27,6 +27,8 @@
             opacity:10;
             width: 100%;
         }
+    
+       
     </style>
 </head>
 <body>
@@ -63,8 +65,18 @@
                     @else
                         @if (Auth::user()->has_applied == NULL)
                             <ul class="navbar-nav mr-auto font-weight-bold">
-                                <form action="/apply" method = "POST">
+                                <form action="https://uat.esewa.com.np/epay/main" method = "POST">
                                     @csrf
+                                    <form action="https://uat.esewa.com.np/epay/main" method="POST">
+                                    <input value="100" name="tAmt" type="hidden">
+                                    <input value="90" name="amt" type="hidden">
+                                    <input value="10" name="txAmt" type="hidden">
+                                    <input value="0" name="psc" type="hidden">
+                                    <input value="0" name="pdc" type="hidden">
+                                    <input value="EPAYTEST" name="scd" type="hidden">
+                                    <input value="papamama123" name="pid" type="hidden">
+                                    <input value="http://localhost:8000/payment-verify?q=su" type="hidden" name="su">
+                                    <input value="http://localhost:8000/payment-verify?q=fu" type="hidden" name="fu">
                                     <input type="submit" value="Apply for Scholarship">
                                 </form>
                                 <!-- <a href="" class="nav-link">Apply for a Scholarship</a> -->
@@ -135,8 +147,8 @@
                 background: linear-gradient(90deg, rgba(17,15,60,1) 0%, rgba(40,28,74,1) 20%, rgba(6,97,116,1) 100%);
                 color: white;
                 text-align: center;">
-        &copy; 2023 Copyright :
-        <a class="text-white" href="{{route('home')}}">eScholarship System</a>
+        &copy; :
+        <a class="text-white" href="{{route('home')}}">शिक्षित नेपाल</a>
     </div>
 </body>
 </html>
